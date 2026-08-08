@@ -146,3 +146,77 @@ document.getElementById("score").innerHTML =
 
 
 loadQuiz();
+
+let notes = JSON.parse(localStorage.getItem("notes")) || [];
+
+
+function saveNote(){
+
+let title =
+document.getElementById("noteTitle").value;
+
+let text =
+document.getElementById("noteText").value;
+
+
+notes.push({
+title:title,
+text:text
+});
+
+
+localStorage.setItem("notes",JSON.stringify(notes));
+
+
+displayNotes();
+
+
+document.getElementById("noteTitle").value="";
+document.getElementById("noteText").value="";
+
+}
+
+
+function displayNotes(){
+
+let box=document.getElementById("savedNotes");
+
+box.innerHTML="";
+
+
+notes.forEach((note,index)=>{
+
+box.innerHTML += `
+
+<div class="note">
+
+<h4>${note.title}</h4>
+
+<p>${note.text}</p>
+
+<button onclick="deleteNote(${index})">
+Delete
+</button>
+
+</div>
+
+`;
+
+});
+
+}
+
+
+
+function deleteNote(index){
+
+notes.splice(index,1);
+
+localStorage.setItem("notes",JSON.stringify(notes));
+
+displayNotes();
+
+}
+
+
+displayNotes();
