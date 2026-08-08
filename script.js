@@ -232,3 +232,71 @@ function changeTheme(){
     document.body.classList.toggle("light");
 
 }
+
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+
+function addTask(){
+
+let input=document.getElementById("taskInput");
+
+if(input.value==""){
+alert("Enter a task");
+return;
+}
+
+
+tasks.push(input.value);
+
+localStorage.setItem("tasks",JSON.stringify(tasks));
+
+
+input.value="";
+
+showTasks();
+
+}
+
+
+
+function showTasks(){
+
+let list=document.getElementById("taskList");
+
+list.innerHTML="";
+
+
+tasks.forEach((task,index)=>{
+
+list.innerHTML += `
+
+<div class="task">
+
+${task}
+
+<button onclick="removeTask(${index})">
+❌
+</button>
+
+</div>
+
+`;
+
+});
+
+}
+
+
+
+function removeTask(index){
+
+tasks.splice(index,1);
+
+localStorage.setItem("tasks",JSON.stringify(tasks));
+
+showTasks();
+
+}
+
+
+showTasks();
