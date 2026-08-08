@@ -226,3 +226,9 @@ function changeTheme(){
 document.body.classList.toggle("light");
 
 }
+
+function changeTheme(){
+
+    document.body.classList.toggle("light");
+
+}
