@@ -26,7 +26,20 @@ body{
     border-radius:15px;
 }
 
+.light{
+    background:white;
+    color:black;
+}
 
+.light .card{
+    background:#e2e8f0;
+    color:black;
+}
+
+.light button{
+    background:#2563eb;
+    color:white;
+}
 button{
     background:#38bdf8;
     border:none;
