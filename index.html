@@ -1,1 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>StudentOS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+
+<div class="header">
+    <h1>🚀 StudentOS</h1>
+    <p>Your Complete Digital Space for Learning</p>
+</div>
+
+
+<div class="container">
+
+<div class="card">
+<h2>🧮 Calculator</h2>
+<p>Quick calculations</p>
+<button onclick="openTool('calculator')">Open</button>
+</div>
+
+
+<div class="card">
+<h2>🧠 Quiz Arena</h2>
+<p>Test your knowledge</p>
+<button onclick="openTool('quiz')">Open</button>
+</div>
+
+
+<div class="card">
+<h2>⏰ Digital Clock</h2>
+<p id="clock">00:00:00</p>
+</div>
+
+
+<div class="card">
+<h2>📝 Notes</h2>
+<textarea id="notes" placeholder="Write your notes here..."></textarea>
+<button onclick="saveNotes()">Save Notes</button>
+</div>
+
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
