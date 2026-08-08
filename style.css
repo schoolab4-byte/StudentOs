@@ -61,3 +61,20 @@ padding:12px;
 font-size:18px;
 }
 
+#noteTitle{
+width:90%;
+padding:8px;
+margin-bottom:10px;
+}
+
+#noteText{
+width:90%;
+height:100px;
+}
+
+.note{
+background:#334155;
+padding:10px;
+margin-top:10px;
+border-radius:10px;
+}
