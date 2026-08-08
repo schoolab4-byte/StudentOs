@@ -72,3 +72,77 @@ document.getElementById("display").value="Error";
 }
 
 }
+
+let currentQuestion = 0;
+let score = 0;
+
+
+let questions = [
+
+{
+question:"Which planet is called Red Planet?",
+options:["Earth","Mars","Jupiter","Venus"],
+answer:1
+},
+
+{
+question:"HTML is used for?",
+options:["Programming","Website Structure","Database","AI"],
+answer:1
+},
+
+{
+question:"2 + 5 = ?",
+options:["5","6","7","8"],
+answer:2
+}
+
+];
+
+
+function loadQuiz(){
+
+let q = questions[currentQuestion];
+
+document.getElementById("question").innerHTML=q.question;
+
+document.getElementById("option1").innerHTML=q.options[0];
+document.getElementById("option2").innerHTML=q.options[1];
+document.getElementById("option3").innerHTML=q.options[2];
+document.getElementById("option4").innerHTML=q.options[3];
+
+}
+
+
+function answer(choice){
+
+if(choice == questions[currentQuestion].answer){
+
+score++;
+
+}
+
+currentQuestion++;
+
+
+if(currentQuestion < questions.length){
+
+loadQuiz();
+
+}
+
+else{
+
+document.getElementById("question").innerHTML =
+"Quiz Completed 🎉";
+
+}
+
+
+document.getElementById("score").innerHTML =
+"Score: " + score;
+
+}
+
+
+loadQuiz();
